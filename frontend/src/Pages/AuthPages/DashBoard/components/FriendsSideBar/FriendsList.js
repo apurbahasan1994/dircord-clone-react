@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 const checkIsOnline = (friends = [], onlineUsers = []) => {
     const newfriends = friends.map((f) => {
         const isUserOnline = onlineUsers.find(user => user?.userId === f.id);
-        console.log(onlineUsers)
         return {
             ...f, isOnline: isUserOnline ? true : false
         };

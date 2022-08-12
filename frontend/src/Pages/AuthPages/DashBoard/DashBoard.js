@@ -16,14 +16,12 @@ const Wrapper = styled('div')({
 });
 function DashBoard({ setUserDetails }) {
   useEffect(() => {
-    console.log('tims');
     const userDetails = localStorage.getItem('user');
-    console.log(userDetails);
     if (!userDetails) {
       logout();
     }
     else {
-      setUserDetails(userDetails);
+      setUserDetails(JSON.parse(userDetails));
       connectWithSocketServer(JSON.parse(userDetails));
     }
   }, [setUserDetails])

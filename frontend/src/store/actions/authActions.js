@@ -24,7 +24,7 @@ const login = (userDetails, history) => {
             dispatch(openAlertMessage(response?.exception.response?.data));
         }
         else {
-            const { userDetails } = response.data;
+            const { userDetails } =response.data;
             localStorage.setItem('user', JSON.stringify(userDetails));
             dispatch(setUserDetails(userDetails));
             history('../dashboard');
@@ -39,7 +39,7 @@ const register = (userDetails, history) => {
             dispatch(openAlertMessage(response?.exception.response?.data));
         }
         else {
-            const { userDetails } = response.data;
+            const { userDetails } =response.data;
             localStorage.setItem('user', JSON.stringify(userDetails));
             dispatch(setUserDetails(userDetails));
             history('../dashboard');
